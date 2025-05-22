@@ -1,0 +1,185 @@
+/* =============== GOOGLE FONTS =============== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* =============== RESET =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* =============== BASE LAYOUT =============== */
+body {
+  font-family: "Poppins", sans-serif;
+  /* Background gradient segar */
+  background: linear-gradient(135deg, #ade6d8, #f5f7fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.game-container {
+  background: linear-gradient(145deg, #ffffff, #e6f7ff);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.game-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(173, 230, 216, 0.3), transparent);
+  animation: rotateBg 8s linear infinite;
+}
+@keyframes rotateBg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.game-container * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #00796b;
+  margin-bottom: 0.5rem;
+}
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* =============== INPUT & BUTTON =============== */
+#guessInput {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #00796b;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+#guessInput:focus {
+  border-color: #004d40;
+  transform: scale(1.02);
+  outline: none;
+}
+
+#guessButton,
+#restartButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #00796b, #004d40);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+#guessButton:hover,
+#restartButton:hover {
+  background: linear-gradient(135deg, #004d40, #00251a);
+  transform: scale(1.05);
+}
+#restartButton {
+  display: none;
+}
+
+/* =============== MESSAGE =============== */
+#message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  min-height: 1.2em;
+  transition: color 0.3s ease;
+}
+#message.success {
+  color: #2e7d32;
+}
+#message.error {
+  color: #c62828;
+}
+
+/* =============== FOOTER =============== */
+.footer {
+  margin-top: 2rem;
+  width: 100vw;
+  background: linear-gradient(135deg, #004d40, #00796b);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.footer__author {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.footer__social a {
+  margin: 0 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+.footer__social a:hover {
+  color: #a5d6a7;
+}
+
+/* =============== RESPONSIVE MEDIA QUERIES =============== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #guessInput {
+    font-size: 0.9rem;
+  }
+  #guessButton,
+  #restartButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+  #message {
+    font-size: 0.9rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .game-container {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-container {
+    max-width: 500px;
+  }
+}
+@media (min-width: 1025px) {
+  .game-container {
+    max-width: 400px;
+  }
+}

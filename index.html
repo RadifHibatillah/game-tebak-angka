@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Tebak Angka</h1>
+      <p>Tebak angka dari 1 sampai 100!</p>
+
+      <!-- guess input -->
+      <input type="number" name="guessInput" id="guessInput" min="1" max="100" />
+
+      <button id="guessButton">Masukkan Jawaban</button>
+      <p id="message">Good Luck! Ayo Mulai! . . .</p>
+
+      <button id="restartButton" style="display: none">Ayo main lagi!</button>
+    </div>
+    <footer class="footer">
+      <div class="footer__copyright">
+        © 2025 Radif Hibatillah Copyright &mdash; Created by
+        <span style="font-weight: bold; text-decoration: underline"> Radif Hibatillah. </span>
+      </div>
+      <div class="footer__social">
+        <a href="https://instagram.com/radifhibatillah" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="uil uil-instagram"></i>
+        </a>
+        <a href="https://github.com/RadifHibatillah" target="_blank" rel="noopener" aria-label="Github">
+          <i class="uil uil-github"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
